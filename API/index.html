@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        #main{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .items{
+            margin: 2%;
+            background-color: antiquewhite;
+            padding: 2%;
+            height: auto;
+
+        }
+        .products{
+            background-color: antiquewhite;
+            margin-top: 10px;
+            width: 250px;
+            border:solid white;
+            padding: 3px;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+    <script>
+        async function getData() {
+            const url = await fetch('https://dummyjson.com/carts');
+            let data = await url.json();
+            let myData = data.carts;
+
+            let items = myData.map((cart) => {
+                let product = cart.products.map(p => {
+                    return `
+                    <div class="products">
+                        <p>Product Id: ${p.id}</p>
+                        <p>Title: ${p.title}</p>
+                        <p>Price: ${p.price}</p>
+                        <p>Quantity: ${p.quantity}</p>
+                        <p>Total: ${p.total}</p>
+                        <p>Discount Percentage: ${p.discountPercentage}</p>
+                        <p>Discounted Total: ${p.discountedTotal}</p>
+                        <img src="${p.thumbnail}" alt="${p.title}">
+                    </div>
+                    `;
+                }).join("");
+
+                return `
+                <div class="items">
+                    <p><strong>Cart Id:</strong>  ${cart.id}</p>
+                    <p><strong>Number of Products:</strong> ${cart.products.length}</p>
+                    <p><strong>Total Quantity:</strong> ${cart.totalQuantity}</p>
+                    <p><strong>Total Price:</strong> $${cart.total}</p>
+                    <p><strong>Discounted Total:</strong> $${cart.discountedTotal}</p>
+                    ${product}
+                </div>
+                `;
+            }).join(""); 
+
+            document.getElementById('main').innerHTML = items; 
+        }
+
+        getData(); 
+    </script>
+    </div>
+</body>
+</html>

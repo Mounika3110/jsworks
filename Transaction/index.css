@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.home{
+    height: 300px;
+}
+.info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+} 

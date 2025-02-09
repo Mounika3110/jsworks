@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="text-center py-3 bg-primary">
+        <h1>Welcome to Your Bank</h1>
+    </div>
+    <div class="home">
+        <div class="info">
+            <div class="card shadow-lg border-0" style="width: 18rem;">
+                <img src="https://img.freepik.com/free-photo/credit-card_1203-3643.jpg?t=st=1733404784~exp=1733408384~hmac=319ce6b387838a47db4e6f4f7ea19c4b0674bdb2efedcc963e59371bd55e5496&w=996" >
+                <div class="card-body bg-dark text-light">
+                    <h2 class="card-title text-center">Account</h2>
+                    <p class="card-text text-center">Your account details and history are available here.</p>
+                    <a href="./details.html" target="_blank" class="btn btn-primary w-100" onclick="hack()">View Details</a>
+                </div>
+            </div>
+            <div class="card shadow-lg border-0" style="width: 18rem;">
+                <img src="https://img.freepik.com/free-photo/credit-written-scrabble-letters-bank-notes_23-2148525366.jpg?t=st=1733404498~exp=1733408098~hmac=dc26281997c335eaaf439de350953182c18044aa757fb82e3c84cfffb42fdbe8&w=996">
+                <div class="card-body bg-dark text-light">
+                    <h2 class="card-title text-center">Credit</h2>
+                    <p class="card-text text-center">Manage your credit options and limits.</p>
+                    <a href="#" class="btn btn-success w-100" onclick="credit()">View Details</a>
+                </div>
+            </div>
+            <div class="card shadow-lg border-0" style="width: 18rem;">
+                <img src="https://img.freepik.com/free-photo/cropped-shot-african-american-male-holding-cell-phone-one-hand-credit-card-other_273609-9137.jpg?t=st=1733404599~exp=1733408199~hmac=0ff99fa28d67c54221d0f98f1f05dee9753cc3c211518c568d472e07808a657f&w=996">
+                <div class="card-body bg-dark text-light">
+                    <h2 class="card-title text-center">Debit</h2>
+                    <p class="card-text text-center">Access your debit card and transaction details.</p>
+                    <a href="#" class="btn btn-danger w-100" onclick="debit()">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
